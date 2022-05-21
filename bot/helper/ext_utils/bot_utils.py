@@ -111,7 +111,7 @@ def get_progress_bar_string(status):
     p_str = f"[{p_str}]"
     return p_str
 
-def get_readable_message(N):
+def get_readable_message():
     with download_dict_lock:
         msg = "N"
         if STATUS_LIMIT is not None:
