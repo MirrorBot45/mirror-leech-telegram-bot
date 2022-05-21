@@ -113,7 +113,7 @@ def torserbut(update, context):
         Thread(target=_search, args=(key, site, message, method)).start()
     else:
         query.answer()
-        editMessage("Search has been canceled!", message)
+        editMessage("👀 Search has been canceled!", message)
 
 def _search(key, site, message, method):
     if method.startswith('api'):
@@ -169,7 +169,7 @@ def _search(key, site, message, method):
         msg += f" <b>result(s) for <i>{key}</i>\nTorrent Site:- <i>{site.capitalize()}</i></b>"
     link = _getResult(search_results, key, message, method)
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("🔎 VIEW", link)
+    buttons.buildbutton("🧿 VIEW", link)
     button = InlineKeyboardMarkup(buttons.build_menu(1))
     editMessage(msg, message, button)
     if not method.startswith('api'):
