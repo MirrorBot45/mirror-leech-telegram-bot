@@ -32,10 +32,10 @@ def select_type(update, context):
         return query.answer(text="Not Yours!", show_alert=True)
     elif data[2] == 'cancel':
         query.answer()
-        return editMessage("list has been canceled!", msg)
+        return editMessage("📃 list has been canceled!", msg)
     query.answer()
     item_type = data[2]
-    editMessage(f"<b>Searching for <i>{key}</i></b>", msg)
+    editMessage(f"<b>👀 Searching for <i>{key}</i></b>", msg)
     Thread(target=_list_drive, args=(key, msg, item_type)).start()
 
 def _list_drive(key, bmsg, item_type):
