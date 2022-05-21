@@ -106,14 +106,14 @@ def get_progress_bar_string(status):
     p = 0 if total == 0 else round(completed * 100 / total)
     p = min(max(p, 0), 100)
     cFull = p // 8
-    p_str = '👀' * cFull
-    p_str += '☠️' * (12 - cFull)
+    p_str = '🔹' * cFull
+    p_str += '🔸' * (12 - cFull)
     p_str = f"[{p_str}]"
     return p_str
 
-def get_readable_message():
+def get_readable_message(N):
     with download_dict_lock:
-        msg = ""
+        msg = "N"
         if STATUS_LIMIT is not None:
             tasks = len(download_dict)
             global pages
